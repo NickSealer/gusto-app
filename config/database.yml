@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  port: 5432
+
+development:
+  <<: *default
+  database: gusto-app_development
+  username: <%= ENV['DB_USERNAMe'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: localhost
+
+test:
+  <<: *default
+  database: gusto-app_test
+  username: <%= ENV['DB_USERNAMe'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: localhost
+
+production:
+  <<: *default
+  database: gusto-app_production
+  username: <%= ENV['DB_USERNAMe'] %>
+  password: <%= ENV['DB_PASSWORD'] %>

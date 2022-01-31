@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Lunches</h1>
+  <%= week_calendar(number_of_weeks: 1, attribute: :scheduled_to, events: @lunches) do |date, lunches| %>
+    <%= date %>
+
+    <% lunches.each do |lunch| %>
+      <div class="lunch-div">
+        <%= lunch.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
